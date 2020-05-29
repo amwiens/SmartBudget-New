@@ -14,7 +14,7 @@
                                   Width="30"
                                   BorderThickness="0">
                 <ToggleButton.Background>
-                    <ImageBrush ImageSource="../Resources/Icons/home.png"
+                    <ImageBrush ImageSource="../Resources/Icons/menu.png"
                                         Stretch="None" />
                 </ToggleButton.Background>
                 <ToggleButton.Triggers>

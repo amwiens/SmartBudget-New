@@ -7,11 +7,51 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Icons\accounts.png" />
+    <None Remove="Resources\Icons\expense.png" />
     <None Remove="Resources\Icons\home.png" />
+    <None Remove="Resources\Icons\income.png" />
+    <None Remove="Resources\Icons\menu.png" />
+    <None Remove="Resources\Icons\messages.png" />
+    <None Remove="Resources\Icons\notification.png" />
+    <None Remove="Resources\Icons\profile.png" />
+    <None Remove="Resources\Icons\reports.png" />
+    <None Remove="Resources\Icons\search.png" />
+    <None Remove="Resources\Icons\settings.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Resources\Icons\accounts.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\expense.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Icons\home.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\income.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\menu.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\messages.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\notification.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\profile.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\reports.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\search.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\settings.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
