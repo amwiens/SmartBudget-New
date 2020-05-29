@@ -8,12 +8,10 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid VerticalAlignment="Top" Height="50">
-
         </Grid>
         <Grid HorizontalAlignment="Left" Width="150">
             <StackPanel>
                 <Grid Height="150">
-
                 </Grid>
                 <ListView BorderBrush="Transparent" Background="Transparent">
                     <ListViewItem Height="30">

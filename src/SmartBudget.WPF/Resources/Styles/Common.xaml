@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:SmartBudget.WPF.Resources.Styles">
+
+    <!-- Colors -->
+    <Color x:Key="ColorPrimary">#FFAB2B</Color>
+
+    <!-- Brushes -->
+    <SolidColorBrush x:Key="BrushPrimary" Color="{StaticResource ColorPrimary}" />
+
+    <!-- Fonts -->
+    <FontFamily x:Key="RubikBlack">./Resources/Fonts/Rubik-Black.ttf</FontFamily>
+    <FontFamily x:Key="RubikBlackItalic">./Resources/Fonts/Rubik-BlackItalic.ttf</FontFamily>
+    <FontFamily x:Key="RubikBold">./Resources/Fonts/Rubik-Bold.ttf</FontFamily>
+    <FontFamily x:Key="RubikBoldItalic">./Resources/Fonts/Rubik-BoldItalic.ttf</FontFamily>
+    <FontFamily x:Key="RubikItalic">./Resources/Fonts/Rubik-Italic.ttf</FontFamily>
+    <FontFamily x:Key="RubikLight">./Resources/Fonts/Rubik-Light.ttf</FontFamily>
+    <FontFamily x:Key="RubikLightItalic">./Resources/Fonts/Rubik-LightItalic.ttf</FontFamily>
+    <FontFamily x:Key="RubikMedium">./Resources/Fonts/Rubik-Medium.ttf</FontFamily>
+    <FontFamily x:Key="RubikMediumItalic">./Resources/Fonts/Rubik-MediumItalic.ttf</FontFamily>
+    <FontFamily x:Key="RubikRegular">./Resources/Fonts/Rubik-Regular.ttf</FontFamily>
+</ResourceDictionary>
