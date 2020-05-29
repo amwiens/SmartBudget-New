@@ -9,15 +9,54 @@
     <Grid>
         <Grid VerticalAlignment="Top" Height="50">
         </Grid>
-        <Grid HorizontalAlignment="Left" Width="150">
+        <Grid x:Name="leftMenu"
+              HorizontalAlignment="Left"
+              Width="150">
             <StackPanel>
-                <Grid Height="150">
+                <Grid Height="90">
+                    <ToggleButton VerticalAlignment="Center"
+                                  HorizontalAlignment="Left"
+                                  Height="30"
+                                  Width="30"
+                                  BorderThickness="0">
+                        <ToggleButton.Background>
+                            <ImageBrush ImageSource="/Resources/Icons/home.png"
+                                        Stretch="None" />
+                        </ToggleButton.Background>
+                        <ToggleButton.Triggers>
+                            <EventTrigger RoutedEvent="ToggleButton.Checked">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="leftMenu"
+                                                         Storyboard.TargetProperty="Width"
+                                                         From="150" To="35" Duration="0:0:0.5" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="leftMenu"
+                                                         Storyboard.TargetProperty="Width"
+                                                         From="35" To="150" Duration="0:0:0.5" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ToggleButton.Triggers>
+                    </ToggleButton>
                 </Grid>
-                <ListView BorderBrush="Transparent" Background="Transparent">
+
+                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                          BorderBrush="Transparent"
+                          Background="Transparent">
                     <ListViewItem Height="30">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="/Resources/Icons/home.png" Height="20" VerticalAlignment="Center" />
-                            <TextBlock Margin="15 0 0 0" Text="Home" VerticalAlignment="Center" />
+                            <Image Source="/Resources/Icons/home.png"
+                                   Height="20"
+                                   VerticalAlignment="Center" />
+                            <TextBlock Margin="15 0 0 0"
+                                       Text="Home"
+                                       VerticalAlignment="Center" />
                         </StackPanel>
                     </ListViewItem>
                 </ListView>
