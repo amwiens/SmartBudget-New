@@ -16,7 +16,7 @@
                 <ListView BorderBrush="Transparent" Background="Transparent">
                     <ListViewItem Height="30">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="Resources/home.png" Height="20" VerticalAlignment="Center" />
+                            <Image Source="/Resources/Icons/home.png" Height="20" VerticalAlignment="Center" />
                             <TextBlock Margin="15 0 0 0" Text="Home" VerticalAlignment="Center" />
                         </StackPanel>
                     </ListViewItem>
