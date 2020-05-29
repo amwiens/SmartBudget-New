@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace SmartBudget.WPF
+namespace SmartBudget.WPF.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

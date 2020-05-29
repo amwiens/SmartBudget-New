@@ -1,4 +1,6 @@
-﻿namespace SmartBudget.WPF
+﻿using System.Windows;
+
+namespace SmartBudget.WPF
 {
     /// <summary>
     /// Interaction logic for App.xaml
