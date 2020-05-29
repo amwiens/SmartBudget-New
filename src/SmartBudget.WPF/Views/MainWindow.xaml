@@ -4,63 +4,41 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SmartBudget.WPF"
+        xmlns:controls="clr-namespace:SmartBudget.WPF.Controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid VerticalAlignment="Top" Height="50">
-        </Grid>
-        <Grid x:Name="leftMenu"
-              HorizontalAlignment="Left"
-              Width="150">
-            <StackPanel>
-                <Grid Height="90">
-                    <ToggleButton VerticalAlignment="Center"
-                                  HorizontalAlignment="Left"
-                                  Height="30"
-                                  Width="30"
-                                  BorderThickness="0">
-                        <ToggleButton.Background>
-                            <ImageBrush ImageSource="/Resources/Icons/home.png"
-                                        Stretch="None" />
-                        </ToggleButton.Background>
-                        <ToggleButton.Triggers>
-                            <EventTrigger RoutedEvent="ToggleButton.Checked">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="leftMenu"
-                                                         Storyboard.TargetProperty="Width"
-                                                         From="150" To="35" Duration="0:0:0.5" />
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                            <EventTrigger RoutedEvent="ToggleButton.Unchecked">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="leftMenu"
-                                                         Storyboard.TargetProperty="Width"
-                                                         From="35" To="150" Duration="0:0:0.5" />
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                        </ToggleButton.Triggers>
-                    </ToggleButton>
-                </Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                          BorderBrush="Transparent"
-                          Background="Transparent">
-                    <ListViewItem Height="30">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="/Resources/Icons/home.png"
-                                   Height="20"
-                                   VerticalAlignment="Center" />
-                            <TextBlock Margin="15 0 0 0"
-                                       Text="Home"
-                                       VerticalAlignment="Center" />
-                        </StackPanel>
-                    </ListViewItem>
-                </ListView>
-            </StackPanel>
+        <Grid Grid.Column="0"
+              HorizontalAlignment="Left">
+            <Border BorderBrush="LightGray"
+                    BorderThickness="0 0 1 0">
+                <controls:NavigationBar />
+            </Border>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0"
+                    VerticalAlignment="Center"
+                    BorderBrush="LightGray"
+                    BorderThickness="0 0 0 1">
+                <controls:TopBar />
+            </Border>
+
+            <ScrollViewer Grid.Row="1"
+                          VerticalScrollBarVisibility="Auto"
+                          HorizontalScrollBarVisibility="Disabled">
+                <ContentControl />
+            </ScrollViewer>
         </Grid>
     </Grid>
 </Window>
