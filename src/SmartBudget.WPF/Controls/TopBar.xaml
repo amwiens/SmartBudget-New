@@ -16,19 +16,24 @@
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
 
-        <Border Grid.Column="1"
-                BorderBrush="LightGray"
-                BorderThickness="1 0 0 0">
-            <TextBlock Text="Search" />
+        <Border Grid.Column="1">
+            <Image Source="../Resources/Icons/search.png"
+                   Height="20"
+                   Margin="10"
+                   VerticalAlignment="Center" />
         </Border>
 
         <Border Grid.Column="2"
                 BorderBrush="LightGray"
                 BorderThickness="1 0 0 0">
 
-            <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
+            <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges"
+                                     StaysOpen="False">
                 <materialDesign:PopupBox.ToggleContent>
-                    <TextBlock Text="Alerts" />
+                    <Image Source="../Resources/Icons/notification.png"
+                           Height="20"
+                           Margin="10"
+                           VerticalAlignment="Center" />
                 </materialDesign:PopupBox.ToggleContent>
                 <StackPanel Orientation="Vertical">
                     <TextBlock Text="PROFILE" />
@@ -43,9 +48,13 @@
                 BorderBrush="LightGray"
                 BorderThickness="1 0 0 0">
 
-            <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
+            <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges"
+                                     StaysOpen="False">
                 <materialDesign:PopupBox.ToggleContent>
-                    <TextBlock Text="Messages" />
+                    <Image Source="../Resources/Icons/messages.png"
+                           Height="20"
+                           Margin="10"
+                           VerticalAlignment="Center" />
                 </materialDesign:PopupBox.ToggleContent>
                 <StackPanel Orientation="Vertical">
                     <TextBlock Text="PROFILE" />
@@ -60,9 +69,13 @@
                 BorderBrush="LightGray"
                 BorderThickness="1 0 0 0">
 
-            <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
+            <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges"
+                                     StaysOpen="False">
                 <materialDesign:PopupBox.ToggleContent>
-                    <TextBlock Text="Account" />
+                    <Image Source="../Resources/Icons/profile.png"
+                           Height="20"
+                           Margin="10"
+                           VerticalAlignment="Center" />
                 </materialDesign:PopupBox.ToggleContent>
                 <StackPanel Orientation="Vertical">
                     <TextBlock Text="PROFILE" />
