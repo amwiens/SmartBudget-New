@@ -41,7 +41,6 @@
                     <TextBlock Text="SIGN OUT" />
                 </StackPanel>
             </materialDesign:PopupBox>
-
         </Border>
 
         <Border Grid.Column="3"

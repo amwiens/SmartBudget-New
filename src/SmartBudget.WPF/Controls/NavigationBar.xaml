@@ -20,7 +20,7 @@
                             <Storyboard>
                                 <DoubleAnimation Storyboard.TargetName="leftMenu"
                                                  Storyboard.TargetProperty="Width"
-                                                 From="150" To="35"
+                                                 From="150" To="30"
                                                  Duration="0:0:0.5" />
                             </Storyboard>
                         </BeginStoryboard>
@@ -30,7 +30,7 @@
                             <Storyboard>
                                 <DoubleAnimation Storyboard.TargetName="leftMenu"
                                                  Storyboard.TargetProperty="Width"
-                                                 From="35" To="150"
+                                                 From="30" To="150"
                                                  Duration="0:0:0.5" />
                             </Storyboard>
                         </BeginStoryboard>
@@ -39,20 +39,35 @@
             </ToggleButton>
         </Grid>
 
-        <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                  BorderBrush="Transparent"
-                  Background="Transparent">
-            <ListViewItem Height="30">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="../Resources/Icons/home.png"
-                           Height="20"
-                           VerticalAlignment="Center" />
-                    <TextBlock Margin="15 0 0 0"
-                               Text="Home"
-                               VerticalAlignment="Center"
-                               Style="{StaticResource H3PrimaryDark}"/>
-                </StackPanel>
-            </ListViewItem>
-        </ListView>
+        <Grid RenderOptions.EdgeMode="Aliased">
+            <Grid.Resources>
+                <Style TargetType="RadioButton" BasedOn="{StaticResource NavButton}" />
+            </Grid.Resources>
+
+            <StackPanel Orientation="Vertical">
+                <RadioButton>
+                    <RadioButton.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="../Resources/Icons/home.png"
+                                   Height="20"
+                                   VerticalAlignment="Center" />
+                            <TextBlock Padding="10 5"
+                                       Text="DASHBOARD" />
+                        </StackPanel>
+                    </RadioButton.Content>
+                </RadioButton>
+                <RadioButton>
+                    <RadioButton.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="../Resources/Icons/accounts.png"
+                                   Height="20"
+                                   VerticalAlignment="Center" />
+                            <TextBlock Padding="10 5"
+                                       Text="ACCOUNTS" />
+                        </StackPanel>
+                    </RadioButton.Content>
+                </RadioButton>
+            </StackPanel>
+        </Grid>
     </StackPanel>
 </UserControl>
