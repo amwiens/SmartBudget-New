@@ -24,7 +24,7 @@
         </Border>
 
         <Border Grid.Column="2"
-                BorderBrush="LightGray"
+                BorderBrush="{StaticResource BrushOutline}"
                 BorderThickness="1 0 0 0">
 
             <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges"
@@ -45,7 +45,7 @@
         </Border>
 
         <Border Grid.Column="3"
-                BorderBrush="LightGray"
+                BorderBrush="{StaticResource BrushOutline}"
                 BorderThickness="1 0 0 0">
 
             <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges"
@@ -66,7 +66,7 @@
 
         <Border x:Name="account"
                 Grid.Column="4"
-                BorderBrush="LightGray"
+                BorderBrush="{StaticResource BrushOutline}"
                 BorderThickness="1 0 0 0">
 
             <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges"

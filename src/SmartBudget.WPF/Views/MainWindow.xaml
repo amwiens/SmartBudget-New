@@ -15,7 +15,7 @@
 
         <Grid Grid.Column="0"
               HorizontalAlignment="Left">
-            <Border BorderBrush="LightGray"
+            <Border BorderBrush="{StaticResource BrushOutline}"
                     BorderThickness="0 0 1 0">
                 <controls:NavigationBar />
             </Border>
@@ -29,7 +29,7 @@
 
             <Border Grid.Row="0"
                     VerticalAlignment="Center"
-                    BorderBrush="LightGray"
+                    BorderBrush="{StaticResource BrushOutline}"
                     BorderThickness="0 0 0 1">
                 <controls:TopBar />
             </Border>
