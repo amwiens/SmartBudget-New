@@ -4,10 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:prism="http://prismlibrary.com/"
-        xmlns:local="clr-namespace:SmartBudget.WPF"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        xmlns:local="clr-namespace:SmartBudget.WPF.Views"
         xmlns:controls="clr-namespace:SmartBudget.WPF.Controls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="{Binding Title}" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -18,7 +19,31 @@
               HorizontalAlignment="Left">
             <Border BorderBrush="{StaticResource BrushOutline}"
                     BorderThickness="0 0 1 0">
-                <controls:NavigationBar />
+                <!--<StackPanel Orientation="Vertical">
+                    <Button Command="{Binding NavigateCommand}" CommandParameter="Dashboard">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="../Resources/Icons/home.png"
+                                       Height="20"
+                                       VerticalAlignment="Center" />
+                                <TextBlock Padding="10 5"
+                                           Text="DASHBOARD" />
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                    <Button Command="{Binding NavigateCommand}" CommandParameter="Account">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="../Resources/Icons/accounts.png"
+                                       Height="20"
+                                       VerticalAlignment="Center" />
+                                <TextBlock Padding="10 5"
+                                           Text="ACCOUNTS" />
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>-->
+                <local:NavigationView />
             </Border>
         </Grid>
 
