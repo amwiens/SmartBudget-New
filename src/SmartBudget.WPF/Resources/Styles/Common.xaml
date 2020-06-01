@@ -14,6 +14,7 @@
     <Color x:Key="ColorOutline">#E8ECEF</Color>
     <Color x:Key="ColorBackground1">#F2F4F6</Color>
     <Color x:Key="ColorBackground2">#F8FAFB</Color>
+    <Color x:Key="ColorBackground3">#FFF6E9</Color>
 
     <!-- Brushes -->
     <SolidColorBrush x:Key="BrushPrimary" Color="{StaticResource ColorPrimary}" />
@@ -27,6 +28,7 @@
     <SolidColorBrush x:Key="BrushOutline" Color="{StaticResource ColorOutline}" />
     <SolidColorBrush x:Key="BrushBackground1" Color="{StaticResource ColorBackground1}" />
     <SolidColorBrush x:Key="BrushBackground2" Color="{StaticResource ColorBackground2}" />
+    <SolidColorBrush x:Key="BrushBackground3" Color="{StaticResource ColorBackground3}" />
 
     <!-- Fonts -->
     <FontFamily x:Key="RubikBlack">./Resources/Fonts/Rubik-Black.ttf</FontFamily>
@@ -140,6 +142,56 @@
         <Setter Property="FontFamily" Value="{StaticResource RubikRegular}" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="Foreground" Value="{StaticResource BrushPrimaryDark}" />
+    </Style>
+    <Style x:Key="H1SecondaryDark1" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource RubikRegular}" />
+        <Setter Property="FontSize" Value="30" />
+        <Setter Property="Foreground" Value="{StaticResource BrushSecondaryDark2}" />
+    </Style>
+    <Style x:Key="H2SecondaryDark1" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource RubikRegular}" />
+        <Setter Property="FontSize" Value="26" />
+        <Setter Property="Foreground" Value="{StaticResource BrushSecondaryDark2}" />
+    </Style>
+    <Style x:Key="H3SecondaryDark1" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource RubikRegular}" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="Foreground" Value="{StaticResource BrushSecondaryDark2}" />
+    </Style>
+    <Style x:Key="H4SecondaryDark1" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource RubikRegular}" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Foreground" Value="{StaticResource BrushSecondaryDark2}" />
+    </Style>
+    <Style x:Key="H5SecondaryDark1" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource RubikRegular}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Foreground" Value="{StaticResource BrushSecondaryDark2}" />
+    </Style>
+    <Style x:Key="CaptionSecondaryDark1" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource RubikMedium}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="{StaticResource BrushSecondaryDark2}" />
+    </Style>
+    <Style x:Key="ButtonLabelSecondaryDark1" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource RubikMedium}" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Foreground" Value="{StaticResource BrushSecondaryDark2}" />
+    </Style>
+    <Style x:Key="TextRegularSecondaryDark1" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource RubikRegular}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="{StaticResource BrushSecondaryDark2}" />
+    </Style>
+    <Style x:Key="TextLightSecondaryDark1" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource RubikLight}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="{StaticResource BrushSecondaryDark2}" />
+    </Style>
+    <Style x:Key="TextLinkSecondaryDark1" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource RubikRegular}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="{StaticResource BrushSecondaryDark2}" />
     </Style>
     <Style x:Key="H1SecondaryDark2" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="{StaticResource RubikRegular}" />
