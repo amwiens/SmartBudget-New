@@ -1,4 +1,5 @@
 ﻿using Prism.Ioc;
+using Prism.Modularity;
 using Prism.Unity;
 
 using SmartBudget.WPF.Views;
@@ -19,7 +20,12 @@ namespace SmartBudget.WPF
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+        }
 
+        protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
+        {
+            moduleCatalog.AddModule<Main.MainModule>();
+            moduleCatalog.AddModule<Accounts.AccountsModule>();
         }
     }
 }

@@ -6,6 +6,7 @@
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
         xmlns:local="clr-namespace:SmartBudget.WPF.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:controls="clr-namespace:SmartBudget.WPF.Controls"
         mc:Ignorable="d"
         Title="{Binding Title}" Height="450" Width="800">
@@ -19,30 +20,6 @@
               HorizontalAlignment="Left">
             <Border BorderBrush="{StaticResource BrushOutline}"
                     BorderThickness="0 0 1 0">
-                <!--<StackPanel Orientation="Vertical">
-                    <Button Command="{Binding NavigateCommand}" CommandParameter="Dashboard">
-                        <Button.Content>
-                            <StackPanel Orientation="Horizontal">
-                                <Image Source="../Resources/Icons/home.png"
-                                       Height="20"
-                                       VerticalAlignment="Center" />
-                                <TextBlock Padding="10 5"
-                                           Text="DASHBOARD" />
-                            </StackPanel>
-                        </Button.Content>
-                    </Button>
-                    <Button Command="{Binding NavigateCommand}" CommandParameter="Account">
-                        <Button.Content>
-                            <StackPanel Orientation="Horizontal">
-                                <Image Source="../Resources/Icons/accounts.png"
-                                       Height="20"
-                                       VerticalAlignment="Center" />
-                                <TextBlock Padding="10 5"
-                                           Text="ACCOUNTS" />
-                            </StackPanel>
-                        </Button.Content>
-                    </Button>
-                </StackPanel>-->
                 <local:NavigationView />
             </Border>
         </Grid>
@@ -57,7 +34,94 @@
                     VerticalAlignment="Center"
                     BorderBrush="{StaticResource BrushOutline}"
                     BorderThickness="0 0 0 1">
-                <controls:TopBar />
+                <!-- Top bar -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="../Resources/Icons/home.png"
+                   Height="20"
+                   Margin="10 0 0 0"
+                   VerticalAlignment="Center" />
+                        <TextBlock Padding="10 0 0 0" Text="{Binding DataContext.Title}" Style="{StaticResource H2PrimaryDark}" VerticalAlignment="Center" />
+                    </StackPanel>
+
+                    <Border Grid.Column="1">
+                        <Image Source="../Resources/Icons/search.png"
+                   Height="20"
+                   Margin="10"
+                   VerticalAlignment="Center" />
+                    </Border>
+
+                    <Border Grid.Column="2"
+                BorderBrush="{StaticResource BrushOutline}"
+                BorderThickness="1 0 0 0">
+
+                        <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges"
+                                     StaysOpen="False">
+                            <materialDesign:PopupBox.ToggleContent>
+                                <Image Source="../Resources/Icons/notification.png"
+                           Height="20"
+                           Margin="10"
+                           VerticalAlignment="Center" />
+                            </materialDesign:PopupBox.ToggleContent>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="PROFILE" />
+                                <TextBlock Text="SETTINGS" />
+                                <TextBlock Text="SIGN OUT" />
+                            </StackPanel>
+                        </materialDesign:PopupBox>
+                    </Border>
+
+                    <Border Grid.Column="3"
+                BorderBrush="{StaticResource BrushOutline}"
+                BorderThickness="1 0 0 0">
+
+                        <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges"
+                                     StaysOpen="False">
+                            <materialDesign:PopupBox.ToggleContent>
+                                <Image Source="../Resources/Icons/messages.png"
+                           Height="20"
+                           Margin="10"
+                           VerticalAlignment="Center" />
+                            </materialDesign:PopupBox.ToggleContent>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="PROFILE" />
+                                <TextBlock Text="SETTINGS" />
+                                <TextBlock Text="SIGN OUT" />
+                            </StackPanel>
+                        </materialDesign:PopupBox>
+                    </Border>
+
+                    <Border x:Name="account"
+                Grid.Column="4"
+                BorderBrush="{StaticResource BrushOutline}"
+                BorderThickness="1 0 0 0">
+
+                        <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges"
+                                     StaysOpen="False">
+                            <materialDesign:PopupBox.ToggleContent>
+                                <Image Source="../Resources/Icons/profile.png"
+                           Height="20"
+                           Margin="10"
+                           VerticalAlignment="Center" />
+                            </materialDesign:PopupBox.ToggleContent>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="PROFILE" />
+                                <TextBlock Text="SETTINGS" />
+                                <TextBlock Text="SIGN OUT" />
+                            </StackPanel>
+                        </materialDesign:PopupBox>
+                    </Border>
+                </Grid>
+                <!-- End Top bar-->
+                <!--<controls:TopBar />-->
             </Border>
 
             <ScrollViewer Grid.Row="1"

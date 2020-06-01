@@ -1,6 +1,4 @@
-﻿using Prism.Regions;
-
-using System.Windows;
+﻿using System.Windows;
 
 namespace SmartBudget.WPF.Views
 {
@@ -9,11 +7,9 @@ namespace SmartBudget.WPF.Views
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow(IRegionManager regionManager)
+        public MainWindow()
         {
             InitializeComponent();
-            // view discovery
-            regionManager.RegisterViewWithRegion("ContentRegion", typeof(DashboardView));
         }
     }
 }

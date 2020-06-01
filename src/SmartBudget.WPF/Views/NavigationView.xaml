@@ -47,7 +47,7 @@
             </Grid.Resources>
 
             <StackPanel Orientation="Vertical">
-                <!--<RadioButton>
+                <RadioButton Command="{Binding NavigateCommand}" CommandParameter="Dashboard">
                     <RadioButton.Content>
                         <StackPanel Orientation="Horizontal">
                             <Image Source="../Resources/Icons/home.png"
@@ -58,7 +58,7 @@
                         </StackPanel>
                     </RadioButton.Content>
                 </RadioButton>
-                <RadioButton>
+                <RadioButton Command="{Binding NavigateCommand}" CommandParameter="AccountsView">
                     <RadioButton.Content>
                         <StackPanel Orientation="Horizontal">
                             <Image Source="../Resources/Icons/accounts.png"
@@ -68,29 +68,7 @@
                                        Text="ACCOUNTS" />
                         </StackPanel>
                     </RadioButton.Content>
-                </RadioButton>-->
-                <Button Command="{Binding NavigateCommand}" CommandParameter="Dashboard">
-                    <Button.Content>
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="../Resources/Icons/home.png"
-                                   Height="20"
-                                   VerticalAlignment="Center" />
-                            <TextBlock Padding="10 5"
-                                       Text="DASHBOARD" />
-                        </StackPanel>
-                    </Button.Content>
-                </Button>
-                <Button Command="{Binding NavigateCommand}" CommandParameter="Account">
-                    <Button.Content>
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="../Resources/Icons/accounts.png"
-                                   Height="20"
-                                   VerticalAlignment="Center" />
-                            <TextBlock Padding="10 5"
-                                       Text="ACCOUNTS" />
-                        </StackPanel>
-                    </Button.Content>
-                </Button>
+                </RadioButton>
             </StackPanel>
         </Grid>
     </StackPanel>
