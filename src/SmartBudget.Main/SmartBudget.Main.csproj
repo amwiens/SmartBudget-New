@@ -9,4 +9,9 @@
     <PackageReference Include="Prism.Wpf" Version="7.2.0.1422" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SmartBudget.Accounts\SmartBudget.Accounts.csproj" />
+    <ProjectReference Include="..\SmartBudget.Domain\SmartBudget.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

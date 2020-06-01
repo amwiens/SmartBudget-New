@@ -10,6 +10,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SmartBudget.Domain\SmartBudget.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Views\AccountsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
