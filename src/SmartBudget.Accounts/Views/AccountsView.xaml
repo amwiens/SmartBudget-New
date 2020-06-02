@@ -30,7 +30,7 @@
                                 </StackPanel>
 
                                 <StackPanel Grid.Column="2" Orientation="Vertical">
-                                    <TextBlock Text="{Binding Balance}" Style="{StaticResource H4PrimaryDark}" />
+                                    <TextBlock Text="{Binding Balance, StringFormat={}{0:C}}" Style="{StaticResource H4PrimaryDark}" />
                                     <TextBlock Text="Balance" Style="{StaticResource H5SecondaryDark1}" />
                                 </StackPanel>
 
@@ -58,7 +58,7 @@
         </Style>
     </UserControl.Resources>
 
-    <Grid>
+    <Grid Background="{StaticResource BrushBackground2}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />

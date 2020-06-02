@@ -9,12 +9,12 @@ namespace SmartBudget.Accounts
     {
         public void OnInitialized(IContainerProvider containerProvider)
         {
-
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<AccountsView>();
+            containerRegistry.RegisterForNavigation<AccountView>();
         }
     }
 }

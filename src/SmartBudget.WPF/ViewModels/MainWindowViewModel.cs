@@ -9,6 +9,7 @@ namespace SmartBudget.WPF.ViewModels
         private readonly IRegionManager _regionManager;
 
         private string _title = "Smart Budget";
+
         public string Title
         {
             get { return _title; }

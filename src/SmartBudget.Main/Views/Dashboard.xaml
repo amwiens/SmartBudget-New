@@ -16,7 +16,6 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-
             <accountscontrols:FavoriteAccountsView Grid.Row="1" Padding="10" />
         </Grid>
     </Grid>

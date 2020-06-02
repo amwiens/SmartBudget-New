@@ -11,9 +11,10 @@ namespace SmartBudget.Accounts.ViewModels
 {
     public class AccountsViewModel : BindableBase, INavigationAware
     {
-        IRegionManager _regionManager;
+        private IRegionManager _regionManager;
 
         private string _title = "Accounts";
+
         public string Title
         {
             get { return _title; }
@@ -21,6 +22,7 @@ namespace SmartBudget.Accounts.ViewModels
         }
 
         private ObservableCollection<Account> _accounts;
+
         public ObservableCollection<Account> Accounts
         {
             get { return _accounts; }
@@ -46,7 +48,7 @@ namespace SmartBudget.Accounts.ViewModels
             parameters.Add("account", account);
 
             if (account != null)
-                _regionManager.RequestNavigate("ContentRegion", "AccountDetail", parameters);
+                _regionManager.RequestNavigate("ContentRegion", "AccountView", parameters);
         }
 
         private void CreateAccounts()
@@ -80,7 +82,6 @@ namespace SmartBudget.Accounts.ViewModels
 
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
-
         }
 
         public bool IsNavigationTarget(NavigationContext navigationContext)
@@ -90,7 +91,6 @@ namespace SmartBudget.Accounts.ViewModels
 
         public void OnNavigatedFrom(NavigationContext navigationContext)
         {
-
         }
     }
 }

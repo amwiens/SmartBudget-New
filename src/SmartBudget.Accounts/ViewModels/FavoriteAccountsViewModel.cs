@@ -10,9 +10,10 @@ namespace SmartBudget.Accounts.ViewModels
 {
     public class FavoriteAccountsViewModel : BindableBase
     {
-        IRegionManager _regionManager;
+        private IRegionManager _regionManager;
 
         private ObservableCollection<Account> _accounts;
+
         public ObservableCollection<Account> Accounts
         {
             get { return _accounts; }
@@ -35,7 +36,7 @@ namespace SmartBudget.Accounts.ViewModels
             parameters.Add("account", account);
 
             if (account != null)
-                _regionManager.RequestNavigate("ContentRegion", "AccountDetail", parameters);
+                _regionManager.RequestNavigate("ContentRegion", "AccountView", parameters);
         }
 
         private void CreateAccounts()

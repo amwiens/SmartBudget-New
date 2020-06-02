@@ -9,7 +9,6 @@ namespace SmartBudget.Main
     {
         public void OnInitialized(IContainerProvider containerProvider)
         {
-
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)

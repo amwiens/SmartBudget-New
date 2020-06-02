@@ -6,6 +6,7 @@ namespace SmartBudget.Main.ViewModels
     public class DashboardViewModel : BindableBase, INavigationAware
     {
         private string _title = "Dashboard";
+
         public string Title
         {
             get { return _title; }
@@ -14,12 +15,10 @@ namespace SmartBudget.Main.ViewModels
 
         public DashboardViewModel()
         {
-
         }
 
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
-
         }
 
         public bool IsNavigationTarget(NavigationContext navigationContext)
@@ -29,7 +28,6 @@ namespace SmartBudget.Main.ViewModels
 
         public void OnNavigatedFrom(NavigationContext navigationContext)
         {
-
         }
     }
 }
