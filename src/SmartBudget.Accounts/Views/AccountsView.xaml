@@ -6,57 +6,56 @@
              prism:ViewModelLocator.AutoWireViewModel="True"
              xmlns:local="clr-namespace:SmartBudget.Accounts.Views">
     <UserControl.Resources>
-        <Style TargetType="ListBox">
-            <Setter Property="BorderThickness" Value="0" />
+        <Style TargetType="ListView">
+            <Setter Property="BorderThickness"
+                    Value="0" />
         </Style>
 
-        <Style TargetType="ListBoxItem">
+        <Style TargetType="ListViewItem">
             <Setter Property="Cursor" Value="Hand" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ListBoxItem">
-                        <Border Margin="10" Background="White">
-                            <Grid Margin="20">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="100" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
+                        <Grid Margin="20">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
 
-                                <Rectangle Grid.Column="0" Fill="{StaticResource BrushBackground3}" Height="40" Width="80" />
+                            <Rectangle Grid.Column="0" Fill="{StaticResource BrushBackground3}" Height="40" Width="80" />
 
-                                <StackPanel Grid.Column="1" Orientation="Vertical">
-                                    <TextBlock Text="{Binding AccountNumber}" Style="{StaticResource H4PrimaryDark}" />
-                                    <TextBlock Text="Card number" Style="{StaticResource H5SecondaryDark1}" />
-                                </StackPanel>
+                            <StackPanel Grid.Column="1" Orientation="Vertical">
+                                <TextBlock Text="{Binding AccountNumber}" Style="{StaticResource H4PrimaryDark}" />
+                                <TextBlock Text="Card number" Style="{StaticResource H5SecondaryDark1}" />
+                            </StackPanel>
 
-                                <StackPanel Grid.Column="2" Orientation="Vertical">
-                                    <TextBlock Text="{Binding Balance, StringFormat={}{0:C}}" Style="{StaticResource H4PrimaryDark}" />
-                                    <TextBlock Text="Balance" Style="{StaticResource H5SecondaryDark1}" />
-                                </StackPanel>
+                            <StackPanel Grid.Column="2" Orientation="Vertical">
+                                <TextBlock Text="{Binding Balance, StringFormat={}{0:C}}" Style="{StaticResource H4PrimaryDark}" />
+                                <TextBlock Text="Balance" Style="{StaticResource H5SecondaryDark1}" />
+                            </StackPanel>
 
-                                <StackPanel Grid.Column="3" Orientation="Vertical">
-                                    <TextBlock Text="$0.00" Style="{StaticResource H4PrimaryDark}" />
-                                    <TextBlock Text="Blocked amount" Style="{StaticResource H5SecondaryDark1}" />
-                                </StackPanel>
+                            <StackPanel Grid.Column="3" Orientation="Vertical">
+                                <TextBlock Text="$0.00" Style="{StaticResource H4PrimaryDark}" />
+                                <TextBlock Text="Blocked amount" Style="{StaticResource H5SecondaryDark1}" />
+                            </StackPanel>
 
-                                <StackPanel Grid.Column="4" Orientation="Vertical">
-                                    <TextBlock Text="01/23" Style="{StaticResource H4PrimaryDark}" />
-                                    <TextBlock Text="Valid" Style="{StaticResource H5SecondaryDark1}" />
-                                </StackPanel>
+                            <StackPanel Grid.Column="4" Orientation="Vertical">
+                                <TextBlock Text="01/23" Style="{StaticResource H4PrimaryDark}" />
+                                <TextBlock Text="Valid" Style="{StaticResource H5SecondaryDark1}" />
+                            </StackPanel>
 
-                                <StackPanel Grid.Column="5" Orientation="Vertical">
-                                    <TextBlock Text="Active" Style="{StaticResource H4PrimaryDark}" />
-                                    <TextBlock Text="Status" Style="{StaticResource H5SecondaryDark1}" />
-                                </StackPanel>
+                            <StackPanel Grid.Column="5" Orientation="Vertical">
+                                <TextBlock Text="Active" Style="{StaticResource H4PrimaryDark}" />
+                                <TextBlock Text="Status" Style="{StaticResource H5SecondaryDark1}" />
+                            </StackPanel>
 
-                                <TextBlock Grid.Column="6" Text="..." VerticalAlignment="Center" Style="{StaticResource H4SecondaryDark1}" />
-                            </Grid>
-                        </Border>
+                            <TextBlock Grid.Column="6" Text="..." VerticalAlignment="Center" Style="{StaticResource H4SecondaryDark1}" />
+                        </Grid>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -75,54 +74,69 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Text="Graphs" />
+            <TextBlock Grid.Row="0"
+                       Text="Graphs" />
 
-            <TextBlock Grid.Row="1" Text="Your cards" Style="{StaticResource H3SecondaryDark2}" />
+            <TextBlock Grid.Row="1"
+                       Text="Your cards"
+                       Style="{StaticResource H3SecondaryDark2}" />
 
             <Grid Grid.Row="2">
-                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                    <Border Margin="10" Background="White">
-                        <ListBox x:Name="_listOfCreditAccounts" ItemsSource="{Binding Accounts}">
-                            <i:Interaction.Triggers>
-                                <i:EventTrigger EventName="SelectionChanged">
-                                    <prism:InvokeCommandAction Command="{Binding AccountSelectedCommand}" CommandParameter="{Binding SelectedItem, ElementName=_listOfCreditAccounts}" />
-                                </i:EventTrigger>
-                            </i:Interaction.Triggers>
-                        </ListBox>
-                    </Border>
-                </ScrollViewer>
+                <Border Margin="10" Background="White">
+                    <ListView x:Name="_listOfCreditAccounts"
+                              ItemsSource="{Binding Accounts}"
+                              ScrollViewer.CanContentScroll="True"
+                              ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectionChanged">
+                                <prism:InvokeCommandAction Command="{Binding AccountSelectedCommand}"
+                                                           CommandParameter="{Binding SelectedItem, ElementName=_listOfCreditAccounts}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </ListView>
+                </Border>
             </Grid>
 
-            <TextBlock Grid.Row="3" Text="Open deposit" Style="{StaticResource H3SecondaryDark2}" />
+            <TextBlock Grid.Row="3"
+                       Text="Open deposit"
+                       Style="{StaticResource H3SecondaryDark2}" />
 
             <Grid Grid.Row="4">
-                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                    <Border Margin="10" Background="White">
-                        <ListBox x:Name="_listOfBankAccounts" ItemsSource="{Binding Accounts}">
-                            <i:Interaction.Triggers>
-                                <i:EventTrigger EventName="SelectionChanged">
-                                    <prism:InvokeCommandAction Command="{Binding AccountSelectedCommand}" CommandParameter="{Binding SelectedItem, ElementName=_listOfBankAccounts}" />
-                                </i:EventTrigger>
-                            </i:Interaction.Triggers>
-                        </ListBox>
-                    </Border>
-                </ScrollViewer>
+                <Border Margin="10"
+                        Background="White">
+                    <ListView x:Name="_listOfBankAccounts"
+                              ItemsSource="{Binding Accounts}"
+                              ScrollViewer.CanContentScroll="True"
+                              ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectionChanged">
+                                <prism:InvokeCommandAction Command="{Binding AccountSelectedCommand}"
+                                                           CommandParameter="{Binding SelectedItem, ElementName=_listOfBankAccounts}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </ListView>
+                </Border>
             </Grid>
 
-            <TextBlock Grid.Row="5" Text="Your credits" Style="{StaticResource H3SecondaryDark2}" />
+            <TextBlock Grid.Row="5"
+                       Text="Your credits"
+                       Style="{StaticResource H3SecondaryDark2}" />
 
             <Grid Grid.Row="6">
-                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                    <Border Margin="10" Background="White">
-                        <ListBox x:Name="_listOfAccounts" ItemsSource="{Binding Accounts}">
-                            <i:Interaction.Triggers>
-                                <i:EventTrigger EventName="SelectionChanged">
-                                    <prism:InvokeCommandAction Command="{Binding AccountSelectedCommand}" CommandParameter="{Binding SelectedItem, ElementName=_listOfAccounts}" />
-                                </i:EventTrigger>
-                            </i:Interaction.Triggers>
-                        </ListBox>
-                    </Border>
-                </ScrollViewer>
+                <Border Margin="10"
+                        Background="White">
+                    <ListView x:Name="_listOfAccounts"
+                              ItemsSource="{Binding Accounts}"
+                              ScrollViewer.CanContentScroll="True"
+                              ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectionChanged">
+                                <prism:InvokeCommandAction Command="{Binding AccountSelectedCommand}"
+                                                           CommandParameter="{Binding SelectedItem, ElementName=_listOfAccounts}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </ListView>
+                </Border>
             </Grid>
         </Grid>
     </Grid>

@@ -4,6 +4,7 @@ using Prism.Regions;
 
 using SmartBudget.Domain.Models;
 
+using System;
 using System.Collections.ObjectModel;
 
 namespace SmartBudget.Accounts.ViewModels
@@ -22,11 +23,15 @@ namespace SmartBudget.Accounts.ViewModels
 
         public DelegateCommand<Account> AccountSelectedCommand { get; private set; }
 
+        public DelegateCommand AllAccountsCommand { get; set; }
+
         public FavoriteAccountsViewModel(IRegionManager regionManager)
         {
             _regionManager = regionManager;
 
             AccountSelectedCommand = new DelegateCommand<Account>(AccountSelected);
+            AllAccountsCommand = new DelegateCommand(AllAccounts);
+
             CreateAccounts();
         }
 
@@ -37,6 +42,11 @@ namespace SmartBudget.Accounts.ViewModels
 
             if (account != null)
                 _regionManager.RequestNavigate("ContentRegion", "AccountView", parameters);
+        }
+
+        private void AllAccounts()
+        {
+            _regionManager.RequestNavigate("ContentRegion", "AccountsView");
         }
 
         private void CreateAccounts()

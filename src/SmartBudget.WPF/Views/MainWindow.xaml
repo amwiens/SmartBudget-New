@@ -124,11 +124,7 @@
                 <!--<controls:TopBar />-->
             </Border>
 
-            <ScrollViewer Grid.Row="1"
-                          VerticalScrollBarVisibility="Auto"
-                          HorizontalScrollBarVisibility="Disabled">
-                <ContentControl prism:RegionManager.RegionName="ContentRegion" />
-            </ScrollViewer>
+            <ContentControl Grid.Row="1" prism:RegionManager.RegionName="ContentRegion" />
         </Grid>
     </Grid>
 </Window>

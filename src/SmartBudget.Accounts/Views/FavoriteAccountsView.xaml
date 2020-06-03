@@ -4,6 +4,61 @@
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True">
+    <UserControl.Resources>
+        <Style TargetType="ListView">
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+
+        <Style TargetType="ListViewItem">
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListViewItem">
+                        <Grid Margin="20">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <Rectangle Grid.Column="0" Fill="{StaticResource BrushBackground3}" Height="40" Width="80" />
+
+                            <StackPanel Grid.Column="1" Orientation="Vertical">
+                                <TextBlock Text="{Binding AccountNumber}" Style="{StaticResource H4PrimaryDark}" />
+                                <TextBlock Text="Card number" Style="{StaticResource H5SecondaryDark1}" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="2" Orientation="Vertical">
+                                <TextBlock Text="{Binding Balance, StringFormat={}{0:C}}" Style="{StaticResource H4PrimaryDark}" />
+                                <TextBlock Text="Balance" Style="{StaticResource H5SecondaryDark1}" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="3" Orientation="Vertical">
+                                <TextBlock Text="$0.00" Style="{StaticResource H4PrimaryDark}" />
+                                <TextBlock Text="Blocked amount" Style="{StaticResource H5SecondaryDark1}" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="4" Orientation="Vertical">
+                                <TextBlock Text="01/23" Style="{StaticResource H4PrimaryDark}" />
+                                <TextBlock Text="Valid" Style="{StaticResource H5SecondaryDark1}" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="5" Orientation="Vertical">
+                                <TextBlock Text="Active" Style="{StaticResource H4PrimaryDark}" />
+                                <TextBlock Text="Status" Style="{StaticResource H5SecondaryDark1}" />
+                            </StackPanel>
+
+                            <TextBlock Grid.Column="6" Text="..." VerticalAlignment="Center" Style="{StaticResource H4SecondaryDark1}" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
     <Grid x:Name="LayoutRoot">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -16,19 +71,33 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Column="0" Text="Favorite accounts" Style="{StaticResource H3SecondaryDark2}" />
-            <TextBlock Grid.Column="1" Text="ALL ACCOUNTS" Style="{StaticResource TextLinkPrimaryDark}" />
+            <TextBlock Grid.Column="0"
+                       Text="Favorite accounts"
+                       Style="{StaticResource H3SecondaryDark2}" />
+            <TextBlock Grid.Column="1"
+                       Text="ALL ACCOUNTS"
+                       Style="{StaticResource TextLinkPrimaryDark}"
+                       Cursor="Hand">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseUp">
+                        <prism:InvokeCommandAction Command="{Binding AllAccountsCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </TextBlock>
         </Grid>
 
         <Grid Grid.Row="1">
-            <Border Margin="10" Background="White">
-                <ListBox x:Name="_listOfAccounts" ItemsSource="{Binding Accounts}">
+            <Border Margin="10"
+                    Background="White">
+                <ListView x:Name="_listOfAccounts"
+                          ItemsSource="{Binding Accounts}">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="SelectionChanged">
-                            <prism:InvokeCommandAction Command="{Binding AccountSelectedCommand}" CommandParameter="{Binding SelectedItem, ElementName=_listOfAccounts}" />
+                            <prism:InvokeCommandAction Command="{Binding AccountSelectedCommand}"
+                                                       CommandParameter="{Binding SelectedItem, ElementName=_listOfAccounts}" />
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
-                </ListBox>
+                </ListView>
             </Border>
         </Grid>
     </Grid>
