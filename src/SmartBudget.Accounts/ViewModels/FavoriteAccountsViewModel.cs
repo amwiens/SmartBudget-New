@@ -4,7 +4,6 @@ using Prism.Regions;
 
 using SmartBudget.Domain.Models;
 
-using System;
 using System.Collections.ObjectModel;
 
 namespace SmartBudget.Accounts.ViewModels
