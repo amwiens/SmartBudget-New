@@ -6,7 +6,12 @@
              prism:ViewModelLocator.AutoWireViewModel="True"
              xmlns:local="clr-namespace:SmartBudget.Accounts.Views">
     <UserControl.Resources>
+        <Style TargetType="ListBox">
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+
         <Style TargetType="ListBoxItem">
+            <Setter Property="Cursor" Value="Hand" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ListBoxItem">
@@ -75,43 +80,49 @@
             <TextBlock Grid.Row="1" Text="Your cards" Style="{StaticResource H3SecondaryDark2}" />
 
             <Grid Grid.Row="2">
-                <Border Margin="10" Background="White">
-                    <ListBox x:Name="_listOfCreditAccounts" ItemsSource="{Binding Accounts}">
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="SelectionChanged">
-                                <prism:InvokeCommandAction Command="{Binding AccountSelectedCommand}" CommandParameter="{Binding SelectedItem, ElementName=_listOfCreditAccounts}" />
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </ListBox>
-                </Border>
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                    <Border Margin="10" Background="White">
+                        <ListBox x:Name="_listOfCreditAccounts" ItemsSource="{Binding Accounts}">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="SelectionChanged">
+                                    <prism:InvokeCommandAction Command="{Binding AccountSelectedCommand}" CommandParameter="{Binding SelectedItem, ElementName=_listOfCreditAccounts}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </ListBox>
+                    </Border>
+                </ScrollViewer>
             </Grid>
 
             <TextBlock Grid.Row="3" Text="Open deposit" Style="{StaticResource H3SecondaryDark2}" />
 
             <Grid Grid.Row="4">
-                <Border Margin="10" Background="White">
-                    <ListBox x:Name="_listOfBankAccounts" ItemsSource="{Binding Accounts}">
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="SelectionChanged">
-                                <prism:InvokeCommandAction Command="{Binding AccountSelectedCommand}" CommandParameter="{Binding SelectedItem, ElementName=_listOfBankAccounts}" />
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </ListBox>
-                </Border>
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                    <Border Margin="10" Background="White">
+                        <ListBox x:Name="_listOfBankAccounts" ItemsSource="{Binding Accounts}">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="SelectionChanged">
+                                    <prism:InvokeCommandAction Command="{Binding AccountSelectedCommand}" CommandParameter="{Binding SelectedItem, ElementName=_listOfBankAccounts}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </ListBox>
+                    </Border>
+                </ScrollViewer>
             </Grid>
 
             <TextBlock Grid.Row="5" Text="Your credits" Style="{StaticResource H3SecondaryDark2}" />
 
             <Grid Grid.Row="6">
-                <Border Margin="10" Background="White">
-                    <ListBox x:Name="_listOfAccounts" ItemsSource="{Binding Accounts}">
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="SelectionChanged">
-                                <prism:InvokeCommandAction Command="{Binding AccountSelectedCommand}" CommandParameter="{Binding SelectedItem, ElementName=_listOfAccounts}" />
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </ListBox>
-                </Border>
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                    <Border Margin="10" Background="White">
+                        <ListBox x:Name="_listOfAccounts" ItemsSource="{Binding Accounts}">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="SelectionChanged">
+                                    <prism:InvokeCommandAction Command="{Binding AccountSelectedCommand}" CommandParameter="{Binding SelectedItem, ElementName=_listOfAccounts}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </ListBox>
+                    </Border>
+                </ScrollViewer>
             </Grid>
         </Grid>
     </Grid>
