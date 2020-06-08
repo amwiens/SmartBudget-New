@@ -2,12 +2,14 @@
 using Prism.Mvvm;
 using Prism.Regions;
 
+using SmartBudget.Core;
+
+using System;
+
 namespace SmartBudget.WPF.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {
-        private readonly IRegionManager _regionManager;
-
         private string _title = "Smart Budget";
 
         public string Title
@@ -16,19 +18,24 @@ namespace SmartBudget.WPF.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
-        public DelegateCommand<string> NavigateCommand { get; private set; }
+        private DelegateCommand<string> _navigateCommand;
+        private readonly IRegionManager _regionManager;
 
-        public MainWindowViewModel(IRegionManager regionManager)
+        public DelegateCommand<string> NavigateCommand =>
+            _navigateCommand ?? (_navigateCommand = new DelegateCommand<string>(ExecuteNavigateCommand));
+
+        public MainWindowViewModel(IRegionManager regionManager, IApplicationCommands applicationCommands)
         {
             _regionManager = regionManager;
-
-            NavigateCommand = new DelegateCommand<string>(Navigate);
+            applicationCommands.NavigateCommand.RegisterCommand(NavigateCommand);
         }
 
-        private void Navigate(string navigatePath)
+        void ExecuteNavigateCommand(string navigatePath)
         {
-            if (navigatePath != null)
-                _regionManager.RequestNavigate("ContentRegion", navigatePath);
+            if (string.IsNullOrEmpty(navigatePath))
+                throw new ArgumentNullException();
+
+            _regionManager.RequestNavigate(RegionNames.ContentRegion, navigatePath);
         }
     }
 }

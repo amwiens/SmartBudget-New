@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Core\Dialogs\RibbonWindow.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Resources\Icons\accounts.png" />
     <None Remove="Resources\Icons\expense.png" />
     <None Remove="Resources\Icons\home.png" />
@@ -18,6 +22,10 @@
     <None Remove="Resources\Icons\reports.png" />
     <None Remove="Resources\Icons\search.png" />
     <None Remove="Resources\Icons\settings.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Core\Dialogs\RibbonWindow.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -71,6 +79,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SmartBudget.Accounts\SmartBudget.Accounts.csproj" />
+    <ProjectReference Include="..\SmartBudget.Core\SmartBudget.Core.csproj" />
     <ProjectReference Include="..\SmartBudget.Domain\SmartBudget.Domain.csproj" />
     <ProjectReference Include="..\SmartBudget.EntityFramework\SmartBudget.EntityFramework.csproj" />
     <ProjectReference Include="..\SmartBudget.Main\SmartBudget.Main.csproj" />

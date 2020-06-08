@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using SmartBudget.Core;
+
+using System.Windows;
 
 namespace SmartBudget.WPF.Views
 {
@@ -7,9 +9,12 @@ namespace SmartBudget.WPF.Views
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private readonly IApplicationCommands _applicationCommands;
+
+        public MainWindow(IApplicationCommands applicationCommands)
         {
             InitializeComponent();
+            _applicationCommands = applicationCommands;
         }
     }
 }
